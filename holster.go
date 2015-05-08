@@ -15,7 +15,7 @@ func main() {
     app := cli.NewApp()
     app.Name = "holster"
     app.Usage = "manage your hosts file"
-    app.Version = "0.1.0"
+    app.Version = "0.1.1"
     app.Author = "Yusuke Komatsu"
     app.Commands = []cli.Command{
         {
@@ -26,15 +26,15 @@ func main() {
             Action:      runInit,
         },
         {
-            Name:        "list",
-            Aliases:     []string{"l"},
+            Name:        "show",
+            Aliases:     []string{"s"},
             Usage:       "read hosts file",
             Description: "read hosts file",
             Action:      runReadHosts,
         },
         {
-            Name:        "known",
-            Aliases:     []string{"k"},
+            Name:        "list",
+            Aliases:     []string{"l"},
             Usage:       "show hosts group. (list files in .holster/bullets)",
             Description: "show hosts group. (list files in .holster/bullets)",
             Action:      runGetHostsFileList,
