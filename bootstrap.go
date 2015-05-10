@@ -43,7 +43,7 @@ func bootstrap() error {
 func createSampleBullet() error {
     var err error
     home := getHomeDir()
-    file := filepath.Join(home, ".holster", "bullets", "sample.host")
+    file := filepath.Join(home, ".holster", "bullets", "default.host")
     _, err = os.Stat(file)
     if err != nil {
         host := []byte(
