@@ -11,7 +11,7 @@ go get github.com/YusukeKomatsu/holster
 OR
 
 ```
-wget -O- https://dl.google.com/dl/page-speed/psol/1.6.29.5.tar.gz | tar xz
+wget -O- https://github.com/YusukeKomatsu/holster/releases/download/v0.1.1/(os).tar.gz | tar xz
 ```
 
 ## Getting Started
