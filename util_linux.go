@@ -7,7 +7,10 @@ import (
 )
 
 func getHomeDir() string {
-	home := os.Getenv("HOME")
+    home := os.Getenv("HOLSTER_HOME")
+    if home != "" {
+        home = os.Getenv("HOME")
+    }
 	return home
 }
 
