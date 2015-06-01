@@ -60,6 +60,35 @@ func main() {
         //     Description: "update hosts by bundle setting",
         //     Action:      runBundle,
         // },
+        {
+            Name:        "bullet",
+            Aliases:     []string{"a"},
+            Usage:       "add a host information in hosts file",
+            Description: "add a host information in hosts file",
+            Subcommands: []cli.Command{
+                {
+                    Name:        "add",
+                    Aliases:     []string{"a"},
+                    Usage:       "add new holster file (preset host file in .holster/bullets)",
+                    Description: "add new holster file (preset host file in .holster/bullets)",
+                    Action:      bulletAdd,
+                },
+                {
+                    Name:        "update",
+                    Aliases:     []string{"u"},
+                    Usage:       "update a holster file (preset host file in .holster/bullets)",
+                    Description: "update a holster file (preset host file in .holster/bullets)",
+                    Action:      bulletUpdate,
+                },
+                {
+                    Name:        "remove",
+                    Aliases:     []string{"rm","r"},
+                    Usage:       "remove a holster file (preset host file in .holster/bullets)",
+                    Description: "remove a holster file (preset host file in .holster/bullets)",
+                    Action:      bulletRemove,
+                },
+            },
+        },
     }
 
     app.Run(os.Args)
