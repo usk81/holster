@@ -11,6 +11,18 @@ func getHomeDir() string {
 	return home
 }
 
+func existFile(file_path string) bool {
+    src, err := os.Stat(file_path)
+    if err != nil {
+        return false
+    }
+
+    if !src.IsDir() {
+        return true
+    }
+    return false
+}
+
 func existDirectory(dir_path string) bool {
 	src, err := os.Stat(dir_path)
 	if err != nil {
