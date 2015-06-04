@@ -4,7 +4,6 @@ import (
     "bufio"
     "fmt"
     "os"
-    "os/exec"
     "path/filepath"
     "io/ioutil"
     "regexp"
@@ -217,22 +216,4 @@ func append(ipaddr string, hosts string) error {
 func validateHostsFile(filename string) bool {
     match, _ := regexp.MatchString("\\.host$", filename)
     return match
-}
-
-func editFile(fp string) error {
-    cmd := exec.Command("vim", fp)
-    cmd.Stdin  = os.Stdin
-    cmd.Stdout = os.Stdout
-    cmd.Stderr = os.Stderr
-
-    var err error
-    if err = cmd.Start(); err != nil {
-        return err
-    }
-
-    err = cmd.Wait()
-    if err != nil {
-        return err
-    }
-    return nil
 }
