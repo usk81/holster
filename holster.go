@@ -4,6 +4,7 @@ import (
     "bufio"
     "fmt"
     "os"
+    "os/exec"
     "path/filepath"
     "io/ioutil"
     "regexp"
@@ -34,7 +35,7 @@ func main() {
         },
         {
             Name:        "list",
-            Aliases:     []string{"l"},
+            Aliases:     []string{"ls", "l"},
             Usage:       "show hosts group. (list files in .holster/bullets)",
             Description: "show hosts group. (list files in .holster/bullets)",
             Action:      runGetHostsFileList,
@@ -53,39 +54,39 @@ func main() {
             Description: "add a host information in hosts file",
             Action:      runAppend,
         },
-        // {
-        //     Name:        "bundle",
-        //     Aliases:     []string{"b"},
-        //     Usage:       "update hosts by bundle setting",
-        //     Description: "update hosts by bundle setting",
-        //     Action:      runBundle,
-        // },
         {
             Name:        "bullet",
-            Aliases:     []string{"a"},
-            Usage:       "add a host information in hosts file",
-            Description: "add a host information in hosts file",
+            Aliases:     []string{"b"},
+            Usage:       "manage bullet files (preset host files in .holster/bullets)",
+            Description: "manage bullet files (preset host files in .holster/bullets)",
             Subcommands: []cli.Command{
                 {
                     Name:        "add",
                     Aliases:     []string{"a"},
-                    Usage:       "add new holster file (preset host file in .holster/bullets)",
-                    Description: "add new holster file (preset host file in .holster/bullets)",
+                    Usage:       "add new bullet file (preset host file in .holster/bullets)",
+                    Description: "add new bullet file (preset host file in .holster/bullets)",
                     Action:      bulletAdd,
                 },
                 {
                     Name:        "update",
                     Aliases:     []string{"u"},
-                    Usage:       "update a holster file (preset host file in .holster/bullets)",
-                    Description: "update a holster file (preset host file in .holster/bullets)",
+                    Usage:       "update a bullet file (preset host file in .holster/bullets)",
+                    Description: "update a bullet file (preset host file in .holster/bullets)",
                     Action:      bulletUpdate,
                 },
                 {
                     Name:        "remove",
                     Aliases:     []string{"rm","r"},
-                    Usage:       "remove a holster file (preset host file in .holster/bullets)",
-                    Description: "remove a holster file (preset host file in .holster/bullets)",
+                    Usage:       "remove a bullet file (preset host file in .holster/bullets)",
+                    Description: "remove a bullet file (preset host file in .holster/bullets)",
                     Action:      bulletRemove,
+                },
+                {
+                    Name:        "show",
+                    Aliases:     []string{"s"},
+                    Usage:       "show a bullet file (preset host file in .holster/bullets)",
+                    Description: "show a bullet file (preset host file in .holster/bullets)",
+                    Action:      bulletShow,
                 },
             },
         },
@@ -216,4 +217,22 @@ func append(ipaddr string, hosts string) error {
 func validateHostsFile(filename string) bool {
     match, _ := regexp.MatchString("\\.host$", filename)
     return match
+}
+
+func editFile(fp string) error {
+    cmd := exec.Command("vim", fp)
+    cmd.Stdin  = os.Stdin
+    cmd.Stdout = os.Stdout
+    cmd.Stderr = os.Stderr
+
+    var err error
+    if err = cmd.Start(); err != nil {
+        return err
+    }
+
+    err = cmd.Wait()
+    if err != nil {
+        return err
+    }
+    return nil
 }
