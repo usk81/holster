@@ -7,8 +7,11 @@ import (
 )
 
 func getHomeDir() string {
-	home := os.Getenv("HOME")
-	return home
+    home := os.Getenv("HOLSTER_HOME")
+    if home != "" {
+        home = os.Getenv("HOME")
+    }
+    return home
 }
 
 func existFile(file_path string) bool {
