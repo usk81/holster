@@ -1,3 +1,4 @@
+// holster is command-line interface (CLI) tool. this provided to manage and edit hosts file.
 package main
 
 import (
