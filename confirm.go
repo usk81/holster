@@ -5,12 +5,13 @@ import (
     "log"
 )
 
-func askForConfirmation(counts ...int) bool {
+func askForConfirmation(question string, counts ...int) bool {
     cnt := 0
     if len(counts) > 0 {
         cnt = counts[0]
     }
 
+    fmt.Println(question)
     var response string
     _, err := fmt.Scanln(&response)
     if err != nil {
@@ -27,8 +28,7 @@ func askForConfirmation(counts ...int) bool {
         return false
     } else {
         cnt++
-        fmt.Println("Please type yes or no and then press enter:")
-        return askForConfirmation(cnt)
+        return askForConfirmation("Please type yes or no and then press enter:", cnt)
     }
 }
 

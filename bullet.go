@@ -58,7 +58,7 @@ func bulletRemove(c *cli.Context) {
     }
 
     // interactive interface
-    if askForConfirmation() == false {
+    if askForConfirmation(fmt.Sprintf("remove %s, really? (y/n)", bullet)) == false {
         os.Exit(1)
     }
 
