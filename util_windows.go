@@ -22,7 +22,7 @@ func getHomeDir() string {
 }
 
 func getHostsFilePath() string {
-    sysRoot := os.GetEnv("SystemRoot")
+    sysRoot := os.Getenv("SystemRoot")
     if sysRoot == "" {
         fmt.Println("SystemRoot are blank")
         return ""
