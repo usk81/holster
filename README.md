@@ -11,7 +11,7 @@ go get github.com/YusukeKomatsu/holster
 OR
 
 ```
-wget -O- https://github.com/YusukeKomatsu/holster/releases/download/v0.1.1/{os}.tar.gz | tar xz
+wget -O- https://github.com/YusukeKomatsu/holster/releases/download/v1.0.0/{os}.tar.gz | tar xz
 ```
 
 ## Getting Started
@@ -29,7 +29,9 @@ If you need more hosts file groups, you make in this directory and name these fi
 
 ## Commands
 
-NOTICE: need to use sudo. (or root user)
+NOTICE:
+need to use sudo. (or root user)
+If you use windows, open command prompt in administrator mode.
 
 ### show
 show your hosts file. (It is equal to 'sudo cat /etc/hosts')
@@ -83,7 +85,7 @@ sudo holster show
 ```
 
 ### append
-append host information in your hosts file
+temporarily append host information in your hosts file
 e.g.) append 127.0.0.1 foobar.com
 
 ```
@@ -92,8 +94,3 @@ sudo holster append 127.0.0.1 "foobar.com"
 # 127.0.0.1       localhost
 # 127.0.0.1 foobar.com
 ```
-
-## Milestone(ToDo)
-
-- add bundle command
-- build for windows user

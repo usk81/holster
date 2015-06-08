@@ -1,8 +1,10 @@
 package main
 
 import (
+    "fmt"
     "os"
     "os/exec"
+    "runtime"
     "path/filepath"
 )
 
@@ -36,6 +38,10 @@ func getBulletPath(bullet string) string {
 }
 
 func editFile(fp string) error {
+    if runtime.GOOS == "windows" {
+        return fmt.Errorf("NOT support to edit files on this platform.")
+    }
+
     cmd := exec.Command("vim", fp)
     cmd.Stdin  = os.Stdin
     cmd.Stdout = os.Stdout
