@@ -176,7 +176,7 @@ func update(bullet string) error {
     }
     defer fr.Close()
 
-    fw, err := os.OpenFile(getHostsFilePath(), os.O_WRONLY|os.O_APPEND, 0644)
+    fw, err := os.OpenFile(getHostsFilePath(), os.O_WRONLY|os.O_TRUNC|os.O_CREATE, 0644)
     if err != nil {
         return err
     }
@@ -200,7 +200,7 @@ func update(bullet string) error {
 }
 
 func append(ipaddr string, hosts string) error {
-    file, err := os.OpenFile(getHostsFilePath(), os.O_WRONLY|os.O_APPEND, 0644)
+    file, err := os.OpenFile(getHostsFilePath(), os.O_WRONLY|os.O_TRUNC|os.O_CREATE, 0644)
     if err != nil {
         return err
     }
