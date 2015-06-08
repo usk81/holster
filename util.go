@@ -39,7 +39,7 @@ func getBulletPath(bullet string) string {
 
 func editFile(fp string) error {
     if runtime.GOOS == "windows" {
-        return fmt.Errorf("not support to edit files.")
+        return fmt.Errorf("NOT support to edit files on this platform.")
     }
 
     cmd := exec.Command("vim", fp)
