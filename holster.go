@@ -110,6 +110,11 @@ func runInit(c *cli.Context) {
 }
 
 func runReadHosts(c *cli.Context) {
+    bullet := c.Args().First()
+    if bullet != "" {
+        bulletShow(c)
+        os.Exit(0)
+    }
     hosts := getHostsFilePath()
     contents, err := ioutil.ReadFile(hosts)
     if err != nil {
