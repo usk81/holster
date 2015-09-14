@@ -5,13 +5,13 @@ command line tool for file management
 
 
 ```
-go get github.com/YusukeKomatsu/holster
+go get github.com/protokit/holster
 ```
 
 OR
 
 ```
-wget -O- https://github.com/YusukeKomatsu/holster/releases/download/v1.0.0/{os}.tar.gz | tar xz
+wget -O- https://github.com/protokit/holster/releases/download/v1.0.0/{os}.tar.gz | tar xz
 ```
 
 ## Getting Started
