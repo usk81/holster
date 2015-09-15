@@ -16,7 +16,7 @@ func main() {
     app := cli.NewApp()
     app.Name = "holster"
     app.Usage = "manage your hosts file"
-    app.Version = "1.0.0"
+    app.Version = "1.0.1"
     app.Author = "Yusuke Komatsu"
     app.Commands = []cli.Command{
         {
