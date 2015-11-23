@@ -5,13 +5,13 @@ command line tool for file management
 
 
 ```
-go get github.com/protokit/holster
+go get github.com/usk81/holster
 ```
 
 OR
 
 ```
-wget -O- https://github.com/protokit/holster/releases/download/v1.0.0/{os}.tar.gz | tar xz
+wget -O- https://github.com/usk81/holster/releases/download/v2.0.0/{os}.tar.gz | tar xz
 ```
 
 ## Getting Started
@@ -33,11 +33,11 @@ NOTICE:
 need to use sudo. (or root user)
 If you use windows, open command prompt in administrator mode.
 
-### show
+### current
 show your hosts file. (It is equal to 'sudo cat /etc/hosts')
 
 ```
-sudo holster show
+sudo holster current
 # 127.0.0.1       localhost
 ```
 
@@ -48,31 +48,31 @@ sudo holster list
 # default
 ```
 
-### update
+### push
 overwrite your hosts file.
 
 ```
-sudo holster update (hosts group)
+sudo holster push (hosts group)
 ```
 
 e.g.) Overwrite your hosts file to .holster/bullet/default.host
 **before**
 
 ```
-holster show
+holster current
 # 127.0.0.1       localhost
 ```
 
 **update**
 
 ```
-sudo holster update default
+sudo holster push default
 ```
 
 **after**
 
 ```
-sudo holster show
+sudo holster current
 # ##
 # # Host Database
 # #
@@ -82,15 +82,4 @@ sudo holster show
 # 127.0.0.1       localhost
 # 255.255.255.255 broadcasthost
 # ::1             localhost
-```
-
-### append
-temporarily append host information in your hosts file
-e.g.) append 127.0.0.1 foobar.com
-
-```
-sudo holster append 127.0.0.1 "foobar.com"
-# hosts file:
-# 127.0.0.1       localhost
-# 127.0.0.1 foobar.com
 ```
