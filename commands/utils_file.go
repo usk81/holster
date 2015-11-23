@@ -1,12 +1,18 @@
-package main
+package commands
 
 import (
     "fmt"
     "os"
     "os/exec"
+    "regexp"
     "runtime"
     "path/filepath"
 )
+
+func validateHostsFile(filename string) bool {
+    match, _ := regexp.MatchString("\\.host$", filename)
+    return match
+}
 
 func existFile(file_path string) bool {
     src, err := os.Stat(file_path)
