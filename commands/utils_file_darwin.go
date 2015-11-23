@@ -1,5 +1,5 @@
-// +build linux
-package main
+// +build darwin
+package commands
 
 import (
 	"os"
@@ -11,11 +11,11 @@ func getHomeDir() string {
     if home == "" {
         home = os.Getenv("HOME")
     }
-	return home
+    return home
 }
 
 func getHostsFilePath() string {
-    file := filepath.Join("etc", "hosts")
+    file := filepath.Join("private", "etc", "hosts")
     file = string(os.PathSeparator) + file
     return file
 }
