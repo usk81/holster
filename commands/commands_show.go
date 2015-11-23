@@ -9,8 +9,8 @@ import (
 var (
     showCmd = &cobra.Command{
         Use:   "show [bullet]",
-        Short: "Cache new data",
-        Long:  "Cache new data if specified key is not used yet or caches (use specified key) are expired.",
+        Short: "show a bullet file",
+        Long:  "show a bullet file (preset host file in .holster/bullets)",
         Run:   showCommand,
     }
 )

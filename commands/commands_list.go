@@ -11,8 +11,8 @@ import (
 var (
     listCmd = &cobra.Command{
         Use:   "list",
-        Short: "Cache new data",
-        Long:  "Cache new data if specified key is not used yet or caches (use specified key) are expired.",
+        Short: "show hosts group",
+        Long:  "show hosts group. (list files in .holster/bullets)",
         Run:   listCommand,
     }
 )

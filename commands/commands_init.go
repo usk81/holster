@@ -10,9 +10,9 @@ import (
 
 var (
     initCmd = &cobra.Command{
-        Use:   "set [key] [value] [expire]",
-        Short: "Cache new data",
-        Long:  "Cache new data if specified key is not used yet or caches (use specified key) are expired.",
+        Use:   "init",
+        Short: "initialize hoster's setting",
+        Long:  "initialize hoster's setting",
         Run:   initCommand,
     }
 )

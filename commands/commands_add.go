@@ -7,9 +7,9 @@ import (
 
 var (
     addCmd = &cobra.Command{
-        Use:   "set [key] [value] [expire]",
-        Short: "Cache new data",
-        Long:  "Cache new data if specified key is not used yet or caches (use specified key) are expired.",
+        Use:   "add [bullet]",
+        Short: "add new bullet file",
+        Long:  "add new bullet file (preset host file in .holster/bullets)",
         Run:   addCommand,
     }
 )

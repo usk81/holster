@@ -10,8 +10,8 @@ import (
 var (
     pushCmd = &cobra.Command{
         Use:   "push [bullet]",
-        Short: "Cache new data",
-        Long:  "Cache new data if specified key is not used yet or caches (use specified key) are expired.",
+        Short: "update hosts file",
+        Long:  "update hosts file",
         Run:   pushCommand,
     }
 )

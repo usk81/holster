@@ -9,8 +9,8 @@ import (
 var (
     currentCmd = &cobra.Command{
         Use:   "current",
-        Short: "Cache new data",
-        Long:  "Cache new data if specified key is not used yet or caches (use specified key) are expired.",
+        Short: "read hosts file",
+        Long:  "read hosts file",
         Run:   currentCommand,
     }
 )

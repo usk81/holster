@@ -8,8 +8,8 @@ import (
 var (
     updateCmd = &cobra.Command{
         Use:   "update [bullet]",
-        Short: "Cache new data",
-        Long:  "Cache new data if specified key is not used yet or caches (use specified key) are expired.",
+        Short: "update a bullet file",
+        Long:  "update a bullet file (preset host file in .holster/bullets)",
         Run:   updateCommand,
     }
 )

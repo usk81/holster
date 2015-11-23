@@ -9,8 +9,8 @@ import (
 var (
     removeCmd = &cobra.Command{
         Use:   "remove [bullet]",
-        Short: "Cache new data",
-        Long:  "Cache new data if specified key is not used yet or caches (use specified key) are expired.",
+        Short: "remove a bullet file",
+        Long:  "remove a bullet file (preset host file in .holster/bullets)",
         Run:   removeCommand,
     }
 )
