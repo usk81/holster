@@ -1,7 +1,7 @@
 package main
 
 import (
-    "./commands"
+    "github.com/usk81/holster/commands"
 )
 
 func main() {
