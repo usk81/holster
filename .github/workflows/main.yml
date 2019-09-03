@@ -3,6 +3,15 @@ name: Build
 on: [release]
 
 jobs:
+  release-darwin-386:
+    steps: 
+    - name: "release darwin/386"
+      uses: ngs/go-release.action@v1.0.1
+      env:
+        GOOS: darwin
+        GOARCH: "386"
+      secrets:
+        - GITHUB_TOKEN
   release-darwin-amd64:
     steps: 
     - name: "release darwin/amd64"
@@ -12,4 +21,39 @@ jobs:
         GOARCH: amd64
       secrets:
         - GITHUB_TOKEN
-
+  release-linux-386:
+    steps: 
+    - name: "release linux/386"
+      uses: ngs/go-release.action@v1.0.1
+      env:
+        GOOS: linux
+        GOARCH: "386"
+      secrets:
+        - GITHUB_TOKEN
+  release-linux-amd64:
+    steps: 
+    - name: "release linux/amd64"
+      uses: ngs/go-release.action@v1.0.1
+      env:
+        GOOS: linux
+        GOARCH: amd64
+      secrets:
+        - GITHUB_TOKEN
+  release-windows-386:
+    steps: 
+    - name: "release windows/386"
+      uses: ngs/go-release.action@v1.0.1
+      env:
+        GOOS: windows
+        GOARCH: "386"
+      secrets:
+        - GITHUB_TOKEN
+  release-windows-amd64:
+    steps: 
+    - name: "release windows/amd64"
+      uses: ngs/go-release.action@v1.0.1
+      env:
+        GOOS: windows
+        GOARCH: amd64
+      secrets:
+        - GITHUB_TOKEN
