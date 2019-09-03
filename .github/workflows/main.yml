@@ -4,6 +4,7 @@ on: [release]
 
 jobs:
   release-darwin-386:
+    runs-on: macOS-latest
     steps: 
     - name: "release darwin/386"
       uses: ngs/go-release.action@v1.0.1
@@ -12,6 +13,7 @@ jobs:
         GOARCH: "386"
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   release-darwin-amd64:
+    runs-on: macOS-latest
     steps: 
     - name: "release darwin/amd64"
       uses: ngs/go-release.action@v1.0.1
@@ -20,6 +22,7 @@ jobs:
         GOARCH: amd64
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   release-linux-386:
+    runs-on: ubuntu-latest
     steps: 
     - name: "release linux/386"
       uses: ngs/go-release.action@v1.0.1
@@ -28,6 +31,7 @@ jobs:
         GOARCH: "386"
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   release-linux-amd64:
+    runs-on: ubuntu-latest
     steps: 
     - name: "release linux/amd64"
       uses: ngs/go-release.action@v1.0.1
@@ -36,6 +40,7 @@ jobs:
         GOARCH: amd64
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   release-windows-386:
+    runs-on: windows-latest
     steps: 
     - name: "release windows/386"
       uses: ngs/go-release.action@v1.0.1
@@ -44,6 +49,7 @@ jobs:
         GOARCH: "386"
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   release-windows-amd64:
+    runs-on: windows-latest
     steps: 
     - name: "release windows/amd64"
       uses: ngs/go-release.action@v1.0.1
